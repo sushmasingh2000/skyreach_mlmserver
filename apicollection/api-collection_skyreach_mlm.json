@@ -1,0 +1,217 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "skyreach_mlm",
+    "collectionId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+    "dateExported": "2025-08-02T10:39:36.887Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "4607a7b5-5bed-49f5-99f5-e908d6765078",
+            "name": "authentication",
+            "containerId": "",
+            "created": "2025-08-01T07:12:25.598Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ef18d6d4-1111-4912-b098-c6b6682d1846",
+            "name": "wallet",
+            "containerId": "",
+            "created": "2025-08-02T07:05:52.479Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "019e68da-c87e-4eec-bbca-71783a9471ba",
+            "name": "profile",
+            "containerId": "",
+            "created": "2025-08-02T07:15:58.044Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "0c562610-7b24-4412-8852-1aae77e27b99",
+            "name": "income",
+            "containerId": "",
+            "created": "2025-08-02T07:16:50.940Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "d053a60a-c8bc-4e7e-b74b-2eac5daffcde",
+            "name": "packagebuy",
+            "containerId": "",
+            "created": "2025-08-02T08:46:48.761Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "6a05a63b-b720-411c-8685-f575e57eacd1",
+            "name": "withdrawal",
+            "containerId": "",
+            "created": "2025-08-02T09:18:27.740Z",
+            "sortNum": 80000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "2bff2785-f604-4003-a951-2c753a82f697",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "4607a7b5-5bed-49f5-99f5-e908d6765078",
+            "name": "users/register",
+            "url": "http://localhost:5000/api/users/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-08-01T07:12:46.710Z",
+            "modified": "2025-08-02T06:50:34.691Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"User D\",\n  \"email\": \"d@example.com\",\n  \"password\": \"123456\",\n  \"referredBy\": \"F4PJEF\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "43d097f5-45f2-423e-9d97-1b3fae86f823",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "ef18d6d4-1111-4912-b098-c6b6682d1846",
+            "name": "user/wallet",
+            "url": "http://localhost:5000/api/users/get-wallet-data",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-08-02T07:06:04.870Z",
+            "modified": "2025-08-02T10:12:30.796Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ]
+        },
+        {
+            "_id": "efab6cd6-a617-48e7-bf0a-82117b2f7dfa",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "019e68da-c87e-4eec-bbca-71783a9471ba",
+            "name": "user/profile",
+            "url": "http://localhost:5000/api/users/get-profile-data",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-08-02T07:16:09.252Z",
+            "modified": "2025-08-02T10:12:25.041Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ]
+        },
+        {
+            "_id": "44db1989-bf11-4a8a-9908-d40b747f964d",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "0c562610-7b24-4412-8852-1aae77e27b99",
+            "name": "user/income",
+            "url": "http://localhost:5000/api/users/get-unilevel-income",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-08-02T07:17:29.996Z",
+            "modified": "2025-08-02T10:14:37.182Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ]
+        },
+        {
+            "_id": "e18f99f0-e8b4-48e5-adc6-bfa14b46244d",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "d053a60a-c8bc-4e7e-b74b-2eac5daffcde",
+            "name": "package",
+            "url": "http://localhost:5000/api/users/buy-package",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-08-02T08:47:24.523Z",
+            "modified": "2025-08-02T10:15:40.668Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\": \"2000\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "190bd88b-8b7a-434a-934d-c30106e796d4",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "d053a60a-c8bc-4e7e-b74b-2eac5daffcde",
+            "name": "history",
+            "url": "http://localhost:5000/api/users/get-package",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2025-08-02T09:16:39.540Z",
+            "modified": "2025-08-02T10:20:19.277Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ]
+        },
+        {
+            "_id": "5b34f2b0-38d3-4612-ad5c-5baaf9e1c1cd",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "6a05a63b-b720-411c-8685-f575e57eacd1",
+            "name": "transaction",
+            "url": "http://localhost:5000/api/users/withdrwal-transaction",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2025-08-02T09:18:36.812Z",
+            "modified": "2025-08-02T10:23:09.981Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\": 50,\n  \"walletAddress\": \"0x1234567890abcdef...\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "194961c8-7017-4945-a9cf-364cb787abe7",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "6a05a63b-b720-411c-8685-f575e57eacd1",
+            "name": "history",
+            "url": "http://localhost:5000/api/users/get-withdrwal-transaction",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2025-08-02T09:18:52.980Z",
+            "modified": "2025-08-02T10:23:46.943Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+                }
+            ]
+        },
+        {
+            "_id": "ba75260c-9ff7-4417-92d7-65120dd52310",
+            "colId": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+            "containerId": "4607a7b5-5bed-49f5-99f5-e908d6765078",
+            "name": "login",
+            "url": "http://localhost:5000/api/users/login",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2025-08-02T09:58:29.826Z",
+            "modified": "2025-08-02T10:12:14.805Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"c@example.com\",\n  \"password\" : \"123456\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "JFXgKAjJDIBs46IXtmjZyv7XGq_nhSIdcPtkqHfN3UzOxFsOkw6xE_b4dbvrLSJi3Xk0WrxekZYu5K_iYWn0ew"
+}

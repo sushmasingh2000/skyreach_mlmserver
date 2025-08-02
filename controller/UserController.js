@@ -59,7 +59,7 @@ const loginUser = async (req, res) => {
     res.status(200).json({
       message: "Login Successfully",
       token,
-      user: {
+      data: {
         id: user._id,
         name: user.name,
         email: user.email,
@@ -76,7 +76,7 @@ const getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.userId);
     if (!user) return res.status(404).json({ message: "User not found" });
-    res.json(user);
+    res.json({message: "Profile List Get successfully", data:user});
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -89,7 +89,7 @@ const getUserWallet = async (req, res) => {
     if (!wallet) {
       return res.status(404).json({ message: "Wallet not found" });
     }
-    res.json(wallet);
+    res.json({message: "Wallet List Get successfully", data: wallet});
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -99,7 +99,8 @@ const getUserWallet = async (req, res) => {
 const getIncome = async (req, res) => {
   try {
     const logs = await Income.find({ userId: req.userId }).populate("fromUserId", "name email");
-    res.json(logs);
+    res.json(
+     { message: "Withdrawal List Get successfully", data: logs});
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -124,9 +125,11 @@ const purchasePackage = async (req, res) => {
 
 const getUserPackageHistory = async (req, res) => {
   try {
-    const { userId } = req.userId;
+    const userId = req.userId;
     const history = await Package.find({ userId }).sort({ createdAt: -1 });
-    res.status(200).json({ data: history });
+    res.status(200).json({ 
+      message: "Package List Get successfully",
+      data: history });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -141,7 +144,7 @@ const requestWithdrawal = async (req, res) => {
       return res.status(400).json({ message: "Wallet address is required" });
     }
     if (amount < 50) {
-      return res.status(400).json({ message: "Minimum withdrawal is ₹500" });
+      return res.status(400).json({ message: "Minimum withdrawal is ₹50" });
     }
     const wallet = await Wallet.findOne({ userId });
     if (!wallet || wallet.balance < amount) {
@@ -172,7 +175,9 @@ const getUserWithdrawals = async (req, res) => {
   try {
     const  userId  = req.userId;
     const withdrawals = await Withdrawal.find({ userId }).sort({ requestedAt: -1 });
-    res.status(200).json({ data: withdrawals });
+    res.status(200).json({ 
+      message: "Withdrawal List Get successfully",
+      data: withdrawals });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
