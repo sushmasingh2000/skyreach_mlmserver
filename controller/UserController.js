@@ -11,7 +11,6 @@ const generateReferralCode = () => {
   return Math.random().toString(36).substring(2, 8).toUpperCase();
 };
 
-
 const registerUser = async (req, res) => {
   try {
     const { name, email, password, referredBy } = req.body;
@@ -95,17 +94,31 @@ const getUserWallet = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 }
-
+//level
 const getIncome = async (req, res) => {
   try {
     const logs = await Income.find({ userId: req.userId }).populate("fromUserId", "name email");
     res.json(
-     { message: "Withdrawal List Get successfully", data: logs});
+     { message: "Income List Get successfully", data: logs});
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
   }
 }
+
+//Binary
+const getAllBinaryIncome = async (req, res) => {
+  try {
+    const logs = await BinaryLog.find({userId:req.userId}).populate("userId", "name email") 
+    res.json({
+      message: "All binary incomes fetched successfully",
+      data: logs,
+    });
+  } catch (err) {
+    console.error("Error fetching  binary incomes:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
 
 const purchasePackage = async (req, res) => {
   try {
@@ -186,4 +199,4 @@ const getUserWithdrawals = async (req, res) => {
 
 
 module.exports = { getUserProfile, registerUser, getUserWallet, getIncome, 
-  purchasePackage , requestWithdrawal , getUserPackageHistory,getUserWithdrawals , loginUser};
+  purchasePackage , requestWithdrawal , getUserPackageHistory,getUserWithdrawals , loginUser, getAllBinaryIncome};
