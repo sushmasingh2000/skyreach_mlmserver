@@ -10,6 +10,7 @@ const {
   getUserWithdrawals,
   getUserPackageHistory,
   loginUser,
+  getBinaryIncome,
 } = require("../controller/UserController");
 const { verifyToken } = require("../middleware/veifytoken");
 
@@ -18,6 +19,7 @@ router.post("/login", loginUser);
 router.get("/get-profile-data", verifyToken, getUserProfile);
 router.get("/get-wallet-data", verifyToken ,getUserWallet);
 router.get("/get-unilevel-income",verifyToken,  getIncome);
+router.get("/get-binarylevel-income",verifyToken,  getBinaryIncome);
 router.post("/buy-package", verifyToken,  purchasePackage);
 router.get("/get-package", verifyToken,  getUserPackageHistory);
 router.post("/withdrwal-transaction", verifyToken, requestWithdrawal);

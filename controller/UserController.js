@@ -6,6 +6,8 @@ const Income = require("../models/Income");
 const Package = require("../models/Package");
 const Withdrawal = require("../models/Withdrawal");
 const jwt = require("jsonwebtoken");
+const Binarylog = require("../models/Binarylog");
+const { distributeBinaryIncome } = require("../services/Binarylevel");
 
 const generateReferralCode = () => {
   return Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -107,9 +109,9 @@ const getIncome = async (req, res) => {
 }
 
 //Binary
-const getAllBinaryIncome = async (req, res) => {
+const getBinaryIncome = async (req, res) => {
   try {
-    const logs = await BinaryLog.find({userId:req.userId}).populate("userId", "name email") 
+    const logs = await Binarylog.find({userId:req.userId}).populate("userId", "name email") 
     res.json({
       message: "All binary incomes fetched successfully",
       data: logs,
@@ -123,12 +125,16 @@ const getAllBinaryIncome = async (req, res) => {
 const purchasePackage = async (req, res) => {
   try {
     const { amount } = req.body;
+     if (isNaN(amount)) {
+      return res.status(400).json({ message: "Invalid amount" });
+    }
      const userId = req.userId;
     const newPackage = await Package.create({
       userId,
       amount,
     });
     await distributeUnilevelCommission(userId, amount);
+    await distributeBinaryIncome(userId)
     res.status(200).json({ message: "Package purchased successfully", Package: newPackage });
   } catch (err) {
     console.error(err);
@@ -199,4 +205,4 @@ const getUserWithdrawals = async (req, res) => {
 
 
 module.exports = { getUserProfile, registerUser, getUserWallet, getIncome, 
-  purchasePackage , requestWithdrawal , getUserPackageHistory,getUserWithdrawals , loginUser, getAllBinaryIncome};
+  purchasePackage , requestWithdrawal , getUserPackageHistory,getUserWithdrawals , loginUser, getBinaryIncome};

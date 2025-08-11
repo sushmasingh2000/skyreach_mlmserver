@@ -1,0 +1,237 @@
+{
+  "info": {
+    "name": "skyreach_mlm",
+    "_postman_id": "5119f15e-ce0b-4f8a-963a-48a957cc665f",
+    "description": "Converted from Thunder Client",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "authentication",
+      "item": [
+        {
+          "name": "users/register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"User D\",\n  \"email\": \"d@example.com\",\n  \"password\": \"123456\",\n  \"referredBy\": \"F4PJEF\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "register"]
+            }
+          }
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"c@example.com\",\n  \"password\" : \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://192.168.18.101:5000/api/users/login",
+              "protocol": "http",
+              "host": ["192", "168", "18", "101"],
+              "port": "5000",
+              "path": ["api", "users", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "wallet",
+      "item": [
+        {
+          "name": "user/wallet",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/users/get-wallet-data",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "get-wallet-data"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "item": [
+        {
+          "name": "user/profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/users/get-profile-data",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "get-profile-data"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "income",
+      "item": [
+        {
+          "name": "user/income",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/users/get-unilevel-income",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "get-unilevel-income"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "packagebuy",
+      "item": [
+        {
+          "name": "package",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"2000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/buy-package",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "buy-package"]
+            }
+          }
+        },
+        {
+          "name": "history",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/users/get-package",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "get-package"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "withdrawal",
+      "item": [
+        {
+          "name": "transaction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 50,\n  \"walletAddress\": \"0x1234567890abcdef...\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/withdrwal-transaction",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "withdrwal-transaction"]
+            }
+          }
+        },
+        {
+          "name": "history",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhkYjUxYTBkYTA5MTE5NDFmOTllOTUiLCJpYXQiOjE3NTQxMjk1MzQsImV4cCI6MTc1NDIxNTkzNH0.wFWVJZZrnXSC784kUXEbyJRsU4OOBjNGF-NHjHGdGck"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/users/get-withdrwal-transaction",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "get-withdrwal-transaction"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
